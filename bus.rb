@@ -9,11 +9,11 @@ class Bus
     return "Brum brum"
   end
 
-  def number_of_passengers
+  def get_number_of_passengers
     return @passengers.count()
   end
 
-  def add_passenger(passenger)
+  def pick_up(passenger)
     @passengers.push(passenger)
   end
 
@@ -26,7 +26,7 @@ class Bus
   end
 
   def pickup_from_stop(bus_stop)
-    while bus_stop.number_of_passengers > 0
+    while bus_stop.get_number_in_queue > 0
       @passengers.push(bus_stop.get_passenger_at_front_of_queue)
       bus_stop.remove_from_front_of_queue
     end

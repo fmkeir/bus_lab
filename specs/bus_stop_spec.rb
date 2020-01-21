@@ -16,18 +16,18 @@ class BusStopTest < Minitest::Test
     @bus_stop2.add_to_queue(@passenger2)
   end
 
-  def test_number_of_passengers_in_queue
-    assert_equal(0, @bus_stop1.number_of_passengers)
+  def test_get_number_of_passengers_in_queue
+    assert_equal(0, @bus_stop1.get_number_in_queue)
   end
 
   def test_add_to_queue
     @bus_stop1.add_to_queue(@passenger1)
-    assert_equal(1, @bus_stop1.number_of_passengers)
+    assert_equal(1, @bus_stop1.get_number_in_queue)
   end
 
   def test_remove_from_front_of_queue
     @bus_stop2.remove_from_front_of_queue
-    assert_equal(1, @bus_stop2.number_of_passengers)
+    assert_equal(1, @bus_stop2.get_number_in_queue)
   end
 
   def test_get_passenger_at_front_of_queue

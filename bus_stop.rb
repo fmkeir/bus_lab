@@ -4,7 +4,7 @@ class BusStop
     @queue = []
   end
 
-  def number_of_passengers
+  def get_number_in_queue
     return @queue.length()
   end
 
