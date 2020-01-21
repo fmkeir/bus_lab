@@ -26,7 +26,10 @@ class Bus
   end
 
   def pickup_from_stop(bus_stop)
-    
+    while bus_stop.number_of_passengers > 0
+      @passengers.push(bus_stop.get_passenger_at_front_of_queue)
+      bus_stop.remove_from_front_of_queue
+    end
   end
 
 
